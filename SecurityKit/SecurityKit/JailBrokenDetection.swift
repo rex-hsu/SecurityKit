@@ -30,6 +30,7 @@ internal class JailBreakDetection {
     //suspicious system and app paths to check
     private static var suspicousAppandSystemPaths: [String] {
         return [
+            // Traditional jailbreaks
             "/usr/sbin/frida-server",
             "/etc/apt/sources.list.d/electra.list",
             "/etc/apt/sources.list.d/sileo.sources",
@@ -72,7 +73,38 @@ internal class JailBreakDetection {
             "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
             "/Library/MobileSubstrate/DynamicLibraries/Veency.plist",
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
+            
+            // Traditional paths
+            "/usr/bin/sshd",
+            "/usr/libexec/sftp-server",
+            "/usr/sbin/sshd",
+            "/bin/bash",
+
+            // Modern jailbreak paths
+            "/var/jb", // Rootless jailbreak root
+            "/var/binpack", // Checkm8 jailbreak
+            "/var/containers/Bundle/tweaksupport",
+            "/var/mobile/Library/palera1n",
+            "/var/mobile/Library/xyz.willy.Zebra",
+            "/var/lib/undecimus",
+            
+            // Palera1n specific
+            "/var/jb/basebin",
+            "/var/jb/usr",
+            "/var/jb/etc",
+            "/var/jb/Library",
+            "/var/jb/.installed_palera1n",
+            "/var/binpack/Applications",
+            "/var/binpack/usr",
+            
+            // TrollStore
+            "/var/containers/Bundle/Application/trollstorehelper",
+            "/var/containers/Bundle/trollstore",
+            
+            // Bootstrap files
+            "/var/jb/preboot",
+            "/var/jb/var"
         ]
     }
     
@@ -109,7 +141,9 @@ internal class JailBreakDetection {
     
     //suspicious apps path to check
     private static var suspiciousAppsPathToCheck: [String] {
-        return ["/Applications/Cydia.app",
+        return [
+                // Traditional jailbreak
+                "/Applications/Cydia.app",
                 "/Applications/blackra1n.app",
                 "/Applications/FakeCarrier.app",
                 "/Applications/Icy.app",
@@ -117,7 +151,22 @@ internal class JailBreakDetection {
                 "/Applications/MxTube.app",
                 "/Applications/RockApp.app",
                 "/Applications/SBSettings.app",
-                "/Applications/WinterBoard.app"
+                "/Applications/WinterBoard.app",
+                
+                // Modern jailbreaks
+                "/Applications/Palera1n.app",
+                "/Applications/Sileo.app",
+                "/Applications/Zebra.app",
+                "/Applications/TrollStore.app",
+                "/var/containers/Bundle/Application/TrollStore.app",
+                
+                // Checkra1n
+                "/Applications/checkra1n.app",
+                
+                // Rootless jailbreak paths
+                "/var/jb/Applications/Cydia.app",
+                "/var/jb/Applications/Sileo.app",
+                "/var/jb/Applications/Zebra.app"
         ]
     }
     
