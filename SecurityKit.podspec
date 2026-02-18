@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "SecurityKit is a security framework for iOS."
   # spec.description  = "SecurityKit is a security framework for iOS."
 
-  spec.homepage     = "https://github.com/rex-hsu/SecurityKit"
+  spec.homepage     = "https://github.com/alivecor/SecurityKit"
 
   spec.license      = "MIT"
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "12.0"
 
-  spec.source       = { :git => "https://github.com/rex-hsu/SecurityKit.git", :tag => spec.version.to_s }
+  spec.source       = { :git => "https://github.com/alivecor/SecurityKit.git", :tag => spec.version.to_s }
 
   spec.source_files  = "SecurityKit/SecurityKit/*.{h,m,swift}"
   spec.swift_version = "5.0"
